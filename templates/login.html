@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %} Login {% endblock %}
+{% block content %}
+<style type="text/css">
+	  #medium-btn {
+        width: 480px;
+        height: 45px;
+        margin:  2px;
+    }
+
+
+
+#mydiv2 {
+    position:fixed;
+    top: 40%;
+    left: 50%;
+    width:24em;
+    height:28em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+   
+}
+
+
+#cleandiv {
+  
+    padding: 10px 40px; 
+    
+    width: 300px;
+    border-radius: 8px;
+   
+}
+
+}
+
+  
+  body{
+ background-image: url('../../static/lupa.png');
+}
+
+ 
+</style>
+<script type="text/javascript">
+  function casaf()
+  {
+    location.href ='{% url "casa_view"  %}';
+  }
+
+
+</script>
+	{% if user.is_authenticated %}
+		<body onload="casaf">
+	{% else %}
+	<br>
+	<center><img src='../../static/logo1.jpg'></center>
+<br>
+
+
+	<center><div id="cleandiv">
+
+		<form method="POST">
+			{% csrf_token %}
+				<label for="username" > Nombre Usuario</label>
+				<input type="text" class="form-control" id="username" name="username" placeholder="Usuario">
+
+				<label for="password">Contraseña</label>
+				<input type="password" class="form-control" id="password" name="password" placeholder="Password">
+			
+			<button type="submit" class="btn btn-primary btn-lg btn-block">Login</button>
+			<button type="reset" class="btn btn-warning btn-lg btn-block">Cancel</button>
+			<a href='{% url "signup" %}' class="btn btn-success btn-lg btn-block" id="" role="button"><font color="">Sign up</a></font>
+		</form> 
+		</center>
+	{% endif %}
+</body>
+{% endblock %}

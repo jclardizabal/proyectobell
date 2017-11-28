@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %} Medicamento {% endblock %}
+{% block content %}
+	<div class = "container">
+
+				<h1>Detalles de la el medicamento {{ object.nombre }}</h1> 
+
+				<br>
+
+					<h4><b><p align="right" style="vertical-align: top;"> {{object.fecha}}</p></b></h4>
+
+					<p>Cantidad: {{ object.cantidad }}</p>
+					<p>Laboratorio: {{ object.laboratorio }}</p>
+					<p>Informacion : {{ object.informacion }}</p>
+					{% if object.imagen  %}
+					<p>Imagen: <img src="{{object.imagen.url}}" width="700" height="500" class="img-responsive"></p>
+					
+					{% endif %}
+				
+
+					
+
+				
+
+				<br>
+
+			
+
+			</div>
+{% endblock %}

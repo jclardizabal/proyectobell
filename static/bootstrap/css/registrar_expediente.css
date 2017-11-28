@@ -1,0 +1,34 @@
+    #id_sexo,#id_estado_civil,#id_practica_deporte,#id_lado_dominante,#id_nivel,
+    #id_esta_embarazada,#id_esta_amamantando li {
+        list-style: none;
+    }
+
+    input#id_motivo_de_consulta,input#id_medico_que_refiere,input#id_otras_drogadiccion,
+    input#id_padre_tipo_cancer,input#id_otro_antecedentes_familiares_padre,
+    input#id_causa_muerte_padre,input#id_madre_tipo_cancer,input#id_otro_antecedentes_familiares_madre,
+    input#id_causa_muerte_madre,input#id_otro_antecedentes_familiares_hermanos,
+    input#id_hermanos_tipo_cancer,input#id_causa_muerte_hermanos,input#id_num_embarazos,
+    input#id_tipos_de_anticonceptivos,input#id_fecha_de_ultima_regla
+    {
+        width: 80%;
+    }
+    input#id_dias_tabaquismo,input#id_year_tabaquismo,input#id_year_alcoholismo,
+    input#id_year_drogadiccion,input#id_year_ejercicio,input#id_year_cafeina,
+    input#id_edad_padre,input#id_edad_madre,input#id_edad_hermanos,input#id_num_hermanos_vivos,
+    input#id_num_hermanos_finados
+    {
+        width: 35%;
+    }
+
+    a#sociales 
+    {
+    border-bottom: 1px solid black;
+    padding-bottom: 5px;
+    color:black;
+    }
+
+    .bg_registrar{
+        background: #d5e1e2;
+        padding: 40px;
+        border-radius: 15px;
+

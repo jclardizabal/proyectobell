@@ -1,0 +1,111 @@
+{% extends 'base.html' %}
+{% block title %} Mostrar recetas {% endblock %}
+{% block content %}
+{% if user.is_authenticated %}
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('../../static/lupa.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+#thediv {
+    width: 80%;
+    height: 50%
+    border: 1px solid ;
+    padding: 10px 40px; 
+     margin: auto;
+    width: 50%;
+   
+    padding: 10px;
+}
+
+</style>
+</head>
+
+<body >
+
+  <br>
+
+<center><h2>Lista de Recetas </h2></center>
+<div id="thediv" >
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Buscar.." title="Buscar">
+<table id="myTable" class="tableizer-table"  >
+ 
+  {% for recetas in recetas %}
+
+           
+ <tr ><td><p align="left"><a  id="a1" href="/detalle_receta/{{ recetas.id }}/">Detalles de la receta de {{ recetas.usuario }} con el doctor {{recetas.doctor}}</td></tr>
+
+
+{% endfor %}
+
+</tbody>
+</table>
+</div>
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+
+
+function myFunction2() {
+var answer = confirm ("Si su medicamento no esta disponible favor de contactar a la farmacia \n Presione Ok para ir al informacion de la farmacia.")
+if (answer)
+window.location='{% url "farmacia_view" %}';
+}
+</script>
+
+
+}
+</script>
+</script>
+  
+  {% endif %}
+
+{% endblock %}

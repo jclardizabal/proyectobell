@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %} Receta {% endblock %}
+{% block content %}
+	<div class = "container">
+
+				<h1>Detalles de la la receta de {{ object.usuario }}</h1> 
+
+				<br>
+
+					<h4><b><p align="right" style="vertical-align: top;"> {{object.fecha}}</p></b></h4>
+
+					<p>Doctor: {{ object.doctor }}</p>
+					<p>cedula: {{ object.cedula }}</p>
+					{% if object.imagen  %}
+					<p>Imagen: <img src="{{object.imagen.url}}" width="700" height="500" class="img-responsive"></p>
+					
+					{% endif %}
+				
+
+					
+
+				
+
+				<br>
+
+			
+
+			</div>
+{% endblock %}

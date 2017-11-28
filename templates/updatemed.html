@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+		{% load staticfiles %}
+
+		{%block title %} 
+			Actualizar medicamento
+		{% endblock %}
+
+		{% block content%}
+
+<style type="text/css">
+
+
+#mydiv {
+    position:fixed;
+    top: 35%;
+    left: 50%;
+    width:30em;
+    height:35em;
+    margin-top: -9em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+   
+}
+
+}
+div {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    background: #dddddd;
+    width: 300px;
+    border-radius: 8px;
+}
+</style>
+		
+		<div id="mydiv">
+			<h1> Actualizar medicamento </h1>
+
+			<form method = "POST" enctype="multipart/form-data">
+				{% csrf_token %}  
+				{{form.as_p}}	
+
+				<input type ="submit" value = "Actualizar">
+				<input type ="reset" value = "Cancelar">	
+			</form>
+
+			<p><a href="/">Volver</a></p>		
+</div>
+	{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Bell Medications {% endblock %}
+{% block content %}
+<style type="text/css">
+	#li {
+    font-size: 200%;
+}
+</style>
+<br>
+<center><h1>Bell Medications</h1></center>
+<center><img src='../../static/logo1.jpg'><center>
+<br>
+
+<br>
+<h4>
+<ul>
+  <li ><a href='{% url "medicamentos_view" %}' >Mediamentos disponibles :{{rw2}}  </a></li>
+  <li>Total de donaciones {{rw3}}</li>
+  <li>Total usuarios beneficiados:{{rw4}}</li>
+  <li>Total de: {{rw1}} medicamentos registrados</li></h4>
+</ul>  
+
+
+
+{% endblock %}
